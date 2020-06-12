@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-@author: LaiZHiYuan
+@author: xiaoyang
 @time: 2018/3/6 10:07
 @file: basic.py
 @desc: 基础类

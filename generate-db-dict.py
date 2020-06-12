@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-@author: LaiZHiYuan
+@author: xiaoyang
 @time: 2019/5/12 17:47
 @file: generate-db-dict.py
 @desc:  生成数据库字典

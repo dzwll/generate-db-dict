@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-@author: LaiZHiYuan
+@author: xiaoyang
 @time: 2018/3/12 14:38
 @file: uuid_utils.py
 @desc: 

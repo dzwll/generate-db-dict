@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-@author: LaiZHiYuan
+@author: xiaoyang
 @time: 2018/3/5 16:47
 @file: gen_db_dict.py
 @desc: 路由器

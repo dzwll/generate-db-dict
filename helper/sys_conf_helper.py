@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-@author: LaiZHiYuan
+@author: xiaoyang
 @time: 2018/3/6 9:23
 @file: sys_conf_helper.py
 @desc: sys_conf.ini文件获取助手
