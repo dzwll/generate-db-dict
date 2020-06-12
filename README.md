@@ -7,7 +7,7 @@
 ```
 1、克隆项目
 
-git clone https://github.com/lazy-share/generate-db-dict.git
+git clone https://github.com/dzwll/generate-db-dict.git
 
 2、安装好python3
 
@@ -78,7 +78,7 @@ python3 -V
 
 6、克隆项目
 
-git clone https://github.com/lazy-share/generate-db-dict.git
+git clone https://github.com/dzwll/generate-db-dict.git
 
 7、进入项目
 
@@ -107,11 +107,3 @@ http://ip:5000
 
 ```
 
-在线演示地址：http://www.laizhiy.cn:8000/
-
-
-![预览界面](https://github.com/lazy-share/generate-db-dict/blob/master/images/success.png)
-
-## 关注我
-
-![微信公众号](https://github.com/lazy-share/generate-db-dict/blob/master/images/weixin.jpg)
