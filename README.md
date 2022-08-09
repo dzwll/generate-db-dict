@@ -33,6 +33,8 @@ python generate-db-dict.py runserver
 7.1 如果启动报错 ... time.time 是因为Python time.clock在Python3.3废弃，在Python3.8中将被移除
 解决使用: 使用time.perf_counter()方
 
+7.2 修改log日志目录
+
 
 8、访问地址
 http://127.0.0.7:5000/
