@@ -1,0 +1,15 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtualenvs (do not commit)
+venv/
+wenv/
+
+# IDE
+.idea/
+
+# Runtime artifacts and logs (may contain credentials - never commit)
+output/
+data/
