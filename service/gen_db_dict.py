@@ -90,21 +90,22 @@ class GenDbDictService(BasicService):
         tables = []
         for ti, table_rows in enumerate(tables_result_set):
             table = TableDto(
-                name=table_rows[0],
-                comment=table_rows[17]
+                name=GenDbDictService.to_str(table_rows[0]),
+                comment=GenDbDictService.to_str(table_rows[17])
             )
             tables_columns_result_set = session.execute(
-                sql_statement.load_columns().format(table=table_rows[0])
+                sql_statement.load_columns().format(table=table.name)
             )
             columns = []
             for tci, table_columns_rows in enumerate(tables_columns_result_set):
+                column_type = GenDbDictService.to_str(table_columns_rows[1])
                 columns.append(TableColumnDto(
-                    name=table_columns_rows[0],
-                    comment=table_columns_rows[8],
-                    nullable=table_columns_rows[3],
-                    pk='主键' if table_columns_rows[4] == 'PRI' else '',
-                    length=GenDbDictService.get_table_column_len(table_columns_rows[1]),
-                    types=table_columns_rows[1]
+                    name=GenDbDictService.to_str(table_columns_rows[0]),
+                    comment=GenDbDictService.to_str(table_columns_rows[8]),
+                    nullable=GenDbDictService.to_str(table_columns_rows[3]),
+                    pk='主键' if GenDbDictService.to_str(table_columns_rows[4]) == 'PRI' else '',
+                    length=GenDbDictService.get_table_column_len(column_type),
+                    types=column_type
                 ))
             table.columns = columns
             tables.append(table)
@@ -119,6 +120,17 @@ class GenDbDictService(BasicService):
         response.headers["Content-disposition"] = 'attachment; filename=%s' % UuidUtils.gen_uuid() + '.doc'
 
         return response
+
+    @staticmethod
+    def to_str(val):
+        """
+        将数据库返回的值统一转为 str，兼容 mysql-connector C 扩展返回 bytes 的情况
+        """
+        if val is None:
+            return ''
+        if isinstance(val, (bytes, bytearray)):
+            return val.decode('utf-8', errors='replace')
+        return str(val)
 
     @staticmethod
     def get_table_column_len(type_len_str):
